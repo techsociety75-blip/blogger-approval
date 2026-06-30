@@ -1,0 +1,55 @@
+{
+  "name": "blogger-approval-backend",
+  "version": "1.0.0",
+  "description": "Blogger Cooperation Approval & Budget Management System - Backend API",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "migrate": "node src/database/runMigrations.js",
+    "seed": "node src/database/seed.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:security": "jest --testPathPattern=security",
+    "test:performance": "jest --testPathPattern=performance",
+    "test:booking-workflow": "node src/tests/integration/booking-workflow.test.js",
+    "lint": "eslint src/",
+    "format": "prettier --write 'src/**/*.js'",
+    "jobs:booking-expiry": "node src/jobs/bookingExpiry.js",
+    "sync:sheets": "node src/jobs/googleSheetSync.js"
+  },
+  "keywords": [
+    "blogger",
+    "approval",
+    "workflow",
+    "budget",
+    "management"
+  ],
+  "author": "Development Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.2",
+    "redis": "^4.6.11",
+    "axios": "^1.6.2",
+    "jsonwebtoken": "^9.1.1",
+    "bcryptjs": "^2.4.3",
+    "joi": "^17.11.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "luxon": "^3.4.1",
+    "google-auth-library": "^9.4.1",
+    "googleapis": "^118.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
